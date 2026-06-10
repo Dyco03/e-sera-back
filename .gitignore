@@ -1,0 +1,13 @@
+# Database 
+*.db
+
+#Uploads
+uploads/post-images/
+uploads/profile-images/
+
+#Env
+.env
+
+#Python cache
+__pycache__/
+*.pyc
