@@ -2,8 +2,12 @@
 *.db
 
 #Uploads
-uploads/post-images/
-uploads/profile-images/
+uploads/*
+
+!uploads/
+!uploads/post-images/
+!uploads/profile-images/
+
 
 #Env
 .env
