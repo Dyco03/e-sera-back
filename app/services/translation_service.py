@@ -55,9 +55,9 @@ class TranslationService:
     def _translate_sync(self, text: str, language: str) -> str:
         client = self._get_client()
         prompt = (
-            f"Traduis le texte suivant en {language}. "
-            "Retourne uniquement la traduction, sans guillemets ni explication.\n\n"
-            f"Texte: {text}"
+            f"Translate the following text into {language}. "
+            "Return only the translation, without quotes or any explanation.\n\n"
+            f"Text: {text}"
         )
         response = client.models.generate_content(
             model=settings.translation_model,

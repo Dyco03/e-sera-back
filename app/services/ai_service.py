@@ -69,10 +69,10 @@ class AiService:
     def _summarize_sync(self, text: str) -> str:
         client = self._get_client()
         prompt = (
-            "Resume ce texte de post social en 1 ou 2 phrases courtes. "
-            "Garde la langue principale du texte. "
-            "Retourne uniquement le resume, sans explication.\n\n"
-            f"Texte: {text}"
+            "Summarize this social post text in 1 or 2 short sentences. "
+            "Keep the main language of the original text. "
+            "Return only the summary, without any explanation.\n\n"
+            f"Text: {text}"
         )
         response = client.models.generate_content(
             model=settings.ai_model,
@@ -86,9 +86,10 @@ class AiService:
     def _suggest_replies_sync(self, message: str) -> list[str]:
         client = self._get_client()
         prompt = (
-            "Genere exactement 3 reponses courtes au message suivant. "
-            "Ton naturel conversationnel. Pas d'explication. "
-            "Retourne uniquement un tableau JSON de 3 chaines.\n\n"
+            "Generate exactly 3 short replies to the following message. "
+            "Use the same language as the input message (if the message is in French, reply in French; if English, reply in English, etc.). "
+            "Natural conversational tone. No explanations. "
+            "Return only a JSON array of 3 strings.\n\n"
             f"Message: {message}"
         )
         response = client.models.generate_content(
